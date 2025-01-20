@@ -1,0 +1,317 @@
+%create a list heat to tail(10to20>10,11,12,13,14,15...,20)
+
+%create_list(X,X,[X]).
+
+%create_list(A,X,[A|T]):- Y is A+1,
+
+%create_list(Y,X,T).
+
+%find number in list or not 
+
+%list_member(X,[X|_]).
+
+%list_member(X,[_|T]):-
+
+%   list_member(X,T).
+
+%find the sum of list element 
+
+%sum_list([], 0).
+
+%sum_list([X|Rest], Sum) :-
+
+%    sum_list(Rest, RestSum),
+
+%    Sum is X + RestSum.
+
+
+
+%display to print each element of  list
+%print_list([]).
+%print_list([X|Rest]) :-
+%    write(X),  
+%    nl,       
+ %   print_list(Rest).
+ 
+
+
+
+
+
+
+
+
+
+%------------------------------------------------------------%
+%---------------------practical 1----------------------------%
+%------------------------------------------------------------%
+%practical1
+%-----------------------quetion--------------------------%
+%Write a prolog Program to understand the concept of facts and queries.
+
+%-----------------------answer--------------------------%
+% Facts
+% parent(john, mary).      % John is a parent of Mary
+% parent(john, mike).      % John is a parent of Mike
+% parent(susan, mary).     % Susan is a parent of Mary
+% parent(susan, mike).     % Susan is a parent of Mike
+% parent(mary, sophia).    % Mary is a parent of Sophia
+% parent(mary, james).     % Mary is a parent of James
+% parent(paul, sophia).    % Paul is a parent of Sophia
+% parent(paul, james).     % Paul is a parent of James
+
+% Gender facts
+% male(john).
+% male(mike).
+% male(paul).
+% male(james).
+
+% female(susan).
+% female(mary).
+% female(sophia).
+
+
+% Queries:
+% 1. Who are the children of John?
+% ?- parent(john, Child).
+
+% 2. Who are the parents of Mary?
+% ?- parent(Parent, mary).
+
+% 3. Is Mike a male?
+% ?- male(mike).
+
+% 4. Is Susan a female?
+% ?- female(susan).
+
+% 5. Who are the males in the family?
+% ?- male(Person).
+
+% 6. Who are the females in the family?
+% ?- female(Person).
+
+
+
+%------------------------------------------------------------%
+%---------------------practical 2----------------------------%
+%------------------------------------------------------------%
+
+%practical 2
+%-----------------------quetion--------------------------%
+%Write a prolog program to implement the following:
+%a.	Factorial of a given number
+%b.	Fibonacci of a given number
+
+% a. Factorial of a given number
+%-----------------------answer--------------------------%
+%factorial(0, 1).   % Base case: factorial of 0 is 1
+%factorial(N, F) :-
+%   N > 0,
+%  N1 is N - 1,
+%  factorial(N1, F1),
+%  F is N * F1.
+
+% b. Fibonacci of a given number
+%-----------------------answer--------------------------%
+%fibonacci(0, 0).   % Base case: Fibonacci of 0 is 0
+%fibonacci(1, 1).   % Base case: Fibonacci of 1 is 1
+%fibonacci(N, F) :-
+%   N > 1,
+%    N1 is N - 1,
+%    N2 is N - 2,
+%    fibonacci(N1, F1),
+%    fibonacci(N2, F2),
+%    F is F1 + F2.
+
+% Example Queries:
+% 1. Factorial of 5.
+%  factorial(5, F).
+
+% 2. Fibonacci of 7.
+%  fibonacci(7, F).
+
+
+%------------------------------------------------------------%
+%---------------------practical 3----------------------------%
+%------------------------------------------------------------%
+
+
+%practical 3
+%-----------------------quetion--------------------------%
+%Write a Prolog program to perform the following operations of the list, 
+%i) To display the element of the given list, 
+%ii) To check given element is in the list or not,
+%iii) To print the last element of the list,
+%Iv) To print the sum of the elements of the given list.
+
+%-----------------------answer--------------------------%
+% i) Display the elements of the given list
+% 
+%display_list([]).
+%display_list([H|T]) :-
+%    write(H), nl,
+%    display_list(T).
+
+% ii) Check if a given element is in the list
+%
+%element_in_list(X, [X|_]).
+%element_in_list(X, [_|T]) :-
+%    element_in_list(X, T).
+
+% iii) Print the last element of the list
+%
+%last_element([X], X).
+%last_element([_|T], X) :-
+%    last_element(T, X).
+
+% iv) Print the sum of the elements of the given list
+%
+%sum_list([], 0).
+%sum_list([H|T], Sum) :-
+%    sum_list(T, TempSum),
+%    Sum is H + TempSum.
+
+% Example Queries:
+% 1. Display the elements of the list [1, 2, 3, 4].
+% ?- display_list([1, 2, 3, 4]).
+
+% 2. Check if 3 is in the list [1, 2, 3, 4].
+% ?- element_in_list(3, [1, 2, 3, 4]).
+
+% 3. Print the last element of the list [1, 2, 3, 4].
+% ?- last_element([1, 2, 3, 4], X).
+
+% 4. Print the sum of the elements of the list [1, 2, 3, 4].
+% ?- sum_list([1, 2, 3, 4], Sum).
+
+%------------------------------------------------------------%
+%-----------------------practical 4--------------------------%
+%------------------------------------------------------------%
+
+%practical 4
+%-----------------------quetion--------------------------%
+%Implement a Family Tree and define the following predicates: 
+%1)parent(X,Y)
+%2)	Father(X,Y)
+%3)	Mother(X,Y)
+%4)	Sister(X,Y) 5)Brother(X,Y)
+%6)Grandfather(X,Y) 
+%7)Grandmother(X,Y)
+
+%-----------------------answer--------------------------%
+% Facts
+% parent(john, mary).      % John is a parent of Mary
+% parent(john, mike).      % John is a parent of Mike
+% parent(susan, mary).     % Susan is a parent of Mary
+% parent(susan, mike).     % Susan is a parent of Mike
+% parent(mary, sophia).    % Mary is a parent of Sophia
+% parent(mary, james).     % Mary is a parent of James
+% parent(paul, sophia).    % Paul is a parent of Sophia
+% parent(paul, james).     % Paul is a parent of James
+
+% Gender facts
+% male(john).
+% male(mike).
+% male(paul).
+% male(james).
+
+% female(susan).
+% female(mary).
+% female(sophia).
+
+% Predicates
+% father(X, Y) :- parent(X, Y), male(X).
+% mother(X, Y) :- parent(X, Y), female(X).
+
+% sister(X, Y) :- parent(Z, X), parent(Z, Y), female(X), X \= Y.
+% brother(X, Y) :- parent(Z, X), parent(Z, Y), male(X), X \= Y.
+
+% grandfather(X, Y) :- parent(X, Z), parent(Z, Y), male(X).
+% grandmother(X, Y) :- parent(X, Z), parent(Z, Y), female(X).
+
+
+% Example Queries:
+% Who is the father of Mary?
+%  father(X, mary).
+
+% Who is the mother of James?
+% mother(X, james).
+
+% Does Mary have a sister?
+% sister(X, mary).
+
+% Does Mike have a brother?
+% brother(X, mike).
+
+% Who is the grandfather of Sophia?
+% grandfather(X, sophia).
+
+% Who is the grandmother of James?
+%  grandmother(X, james).
+
+
+
+%------------------------------------------------------------%
+%-----------------------practical 5--------------------------%
+%------------------------------------------------------------%
+%practical5
+%-----------------------quetion--------------------------%
+%Assume given a set of facts of the form father(name1,name2) (name1 is the father of name2)
+%Define a predicate cousin(X,Y) which holds iff X and Y are cousins. Define a predicate grandson(X,Y) which holds iff X is a grandson of Y.
+%Define a predicate descendent(X,Y) which holds iff X is a descendent of Y. Define a predicate grandparent(X,Y) which holds iff X is a grandparent of Y.
+
+%Consider the following genealogical tree:
+%father(a,b).
+%father(a,c).
+%father(b,d).
+%father(b,e).
+%father(c,f).
+%Say which answers, and in which order, are generated by your definitions for the following queries in Prolog:
+%?- cousin(X,Y).
+%?- grandson(X,Y).
+%?- descendent(X,Y).
+%?-grandparent(X,Y).
+
+
+%-----------------------answer--------------------------%
+% Facts
+father(a, b).   % a is the father of b
+father(a, c).   % a is the father of c
+father(b, d).   % b is the father of d
+father(b, e).   % b is the father of e
+father(c, f).   % c is the father of f
+
+% Predicates
+
+% Cousin predicate: X and Y are cousins if their parents are siblings
+cousin(X, Y) :-
+    father(P1, X),
+    father(P2, Y),
+    father(GP, P1),
+    father(GP, P2),
+    P1 \= P2.
+
+% Grandson predicate: X is a grandson of Y if Y is the father of X's parent
+grandson(X, Y) :-
+    father(Y, P),
+    father(P, X).
+
+% Descendent predicate: X is a descendent of Y if Y is an ancestor of X
+descendent(X, Y) :-
+    father(Y, X).
+descendent(X, Y) :-
+    father(Y, Z),
+    descendent(X, Z).
+
+% Grandparent predicate: X is a grandparent of Y if X is the parent of Y's parent
+grandparent(X, Y) :-
+    father(X, P),
+    father(P, Y).
+
+% Example Queries:
+%  cousin(X, Y).
+%  grandson(X, Y).
+%  descendent(X, Y).
+%  grandparent(X, Y).
+
+
