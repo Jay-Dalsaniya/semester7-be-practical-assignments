@@ -1,0 +1,40 @@
+git command
+
+ git config --global user.name
+
+git config --global user.email
+
+mkdir practical-2
+
+cd practical-2
+
+git init
+
+git add welcome.html
+
+git status
+
+git add --all
+
+git status
+
+git commit -m"This Is Fist Commit"
+
+git log
+
+git branch
+
+git branch jay_dalsaniya
+
+git checkout
+
+git branch
+
+git status
+
+git checkout jay_dalsaniya
+
+git checkout
+
+git branch
+

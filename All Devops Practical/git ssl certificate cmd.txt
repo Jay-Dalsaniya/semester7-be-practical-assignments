@@ -1,0 +1,9 @@
+Disable SSL Verification Temporarily:
+As a temporary measure (not recommended for long-term use), you can disable SSL verification:
+bash
+Copy code
+git config --global http.sslVerify false
+This will bypass the SSL certificate verification. Ensure to enable it again after testing:
+bash
+Copy code
+git config --global http.sslVerify true
